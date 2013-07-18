@@ -1,3 +1,4 @@
+<?php
 require_once( '../solr-php-client/Apache/Solr/Service.php' );
 
 define('SOLR_URI', variable_get('solr_host_uri', 'http://solr.farm.nypl.org'));
