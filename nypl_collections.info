@@ -1,0 +1,9 @@
+name = NYPL Collections
+description = Searches NYPL Collections API and renders results for use in Drupal and via a JSON feed.
+package = "NYPL"
+core = 7.x
+
+files[] = nypl_collections.module
+files[] = nypl_collections.install
+
+stylesheets[all][] = css/nypl-collections.css

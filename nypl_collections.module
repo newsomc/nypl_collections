@@ -1,0 +1,14 @@
+<?php
+
+function nypl_collections_menu() {
+  $items['admin/config/nypl-collections'] = array(
+    'title' => 'NYPL Collections Administration',
+    'description' => '.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('nypl_collections_settings'),
+    'access arguments' => array('administer nypl_collections'),
+    'file' => 'nypl_collections.admin.inc',
+  );
+  return $items;
+}
+
