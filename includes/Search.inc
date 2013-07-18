@@ -20,7 +20,7 @@ function SolrSearch($query) {
 
   if (!$solr->ping()) {
     print 'Solr service not responding.';
-    //die();
+    die();
   }
 
   if (get_magic_quotes_gpc() == 1) {
