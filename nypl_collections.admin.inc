@@ -48,7 +48,7 @@ function nypl_collections_admin_settings() {
     '#required' => TRUE,
   );
   
-  $form['repo_solr_settings']['password'] array(
+  $form['repo_solr_settings']['password'] = array(
     '#type' => 'textfield',
     '#title' => t('Solr password'),
     '#default_value' => variable_get('solr_host_pass', 'WbVL2ji5fNdstUrUHDdu'),
