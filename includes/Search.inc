@@ -4,7 +4,7 @@ define('SOLR_URI', variable_get('solr_host_uri', 'http://solr.farm.nypl.org'));
 define('SOLR_PORT', variable_get('solr_host_port', '8080'));
 define('SOLR_VERSION', variable_get('solr_host_version', 'solr-3.5'));
 
-function SolrSearch(){
+function SolrSearch($query){
   $solr = new Apache_Solr_Service(SOLR_URI, SOLR_PORT, '/' . SOLR_VERSION . '/');
 
   if (! $solr->ping()) {
@@ -31,4 +31,5 @@ function SolrSearch(){
   }
 }
 
+SolrSearch("cats");
 
