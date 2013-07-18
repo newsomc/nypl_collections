@@ -1,21 +1,24 @@
 <?php
 require_once( '../lib/solr-php-client/Apache/Solr/Service.php' );
 
-define('SOLR_URI', variable_get('solr_host_uri', 'http://solr.farm.nypl.org'));
-define('SOLR_PORT', variable_get('solr_host_port', '8080'));
-define('SOLR_VERSION', variable_get('solr_host_version', 'solr-3.5'));
+// define('SOLR_URI', variable_get('solr_host_uri', 'http://solr.farm.nypl.org'));
+// define('SOLR_PORT', variable_get('solr_host_port', '8080'));
+// define('SOLR_VERSION', variable_get('solr_host_version', 'solr-3.5'));
 
-//define('SOLR_URI', variable_get('solr_host_uri', 'http://solr.farm.nypl.org'));
-//define('SOLR_PORT', variable_get('solr_host_port', '8080'));
-//define('SOLR_VERSION', variable_get('solr_host_version', 'solr-3.5'));
+define('SOLR_URI','http://solr.farm.nypl.org');
+define('SOLR_PORT','8080');
+define('SOLR_VERSION','solr-3.5');
+define('SOLR_USER','solradmin');
+define('SOLR_PASS','WbVL2ji5fNdstUrUHDdu');
 
+// Example query for topics
+// http://solr.farm.nypl.org:8080/solr-3.5/repoapi/select/?q=*%3A*&start=0&rows=0&facet=true&facet.field=topic_mtxt_s&facet.limit=1200
 
 function SolrSearch($query){
   $solr = new Apache_Solr_Service(SOLR_URI, SOLR_PORT, '/' . SOLR_VERSION . '/');
+  $solr->setAuthenticationCredentials(SOLR_USER, SOLR_PASS);
 
-  var_dump($solr);
-
-  if (! $solr->ping()) {
+  if (!$solr->ping()) {
     print 'Solr service not responding.';
     die();
   }
