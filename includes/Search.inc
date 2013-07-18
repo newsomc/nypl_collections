@@ -15,7 +15,7 @@ define('SOLR_PASS','WbVL2ji5fNdstUrUHDdu');
 // http://solr.farm.nypl.org:8080/solr-3.5/repoapi/select/?q=*%3A*&start=0&rows=0&facet=true&facet.field=topic_mtxt_s&facet.limit=1200
 
 function SolrSearch($query){
-  $solr = new Apache_Solr_Service(SOLR_URI, SOLR_PORT, '/' . SOLR_VERSION . '/');
+  $solr = new Apache_Solr_Service(SOLR_URI, SOLR_PORT, SOLR_VERSION);
   $solr->setAuthenticationCredentials(SOLR_USER, SOLR_PASS);
 
   if (!$solr->ping()) {
