@@ -5,8 +5,15 @@ define('SOLR_URI', variable_get('solr_host_uri', 'http://solr.farm.nypl.org'));
 define('SOLR_PORT', variable_get('solr_host_port', '8080'));
 define('SOLR_VERSION', variable_get('solr_host_version', 'solr-3.5'));
 
+//define('SOLR_URI', variable_get('solr_host_uri', 'http://solr.farm.nypl.org'));
+//define('SOLR_PORT', variable_get('solr_host_port', '8080'));
+//define('SOLR_VERSION', variable_get('solr_host_version', 'solr-3.5'));
+
+
 function SolrSearch($query){
   $solr = new Apache_Solr_Service(SOLR_URI, SOLR_PORT, '/' . SOLR_VERSION . '/');
+
+  var_dump($solr);
 
   if (! $solr->ping()) {
     print 'Solr service not responding.';
