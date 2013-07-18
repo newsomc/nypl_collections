@@ -11,8 +11,8 @@ function nypl_collections_menu() {
     'file' => 'nypl_collections.admin.inc',
   );
 
-  $items['admin/collection/add'] = array(
-    'title' => 'NYPL Collections Add.',
+  $items['admin/collection/currate'] = array(
+    'title' => 'Curate a new Collection',
     'description' => 'Curate a new Collection.',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('nypl_collections_form'),
@@ -30,3 +30,6 @@ function nypl_collections_menu() {
   return $items;
 }
 
+function nypl_collections_form() {
+
+}
