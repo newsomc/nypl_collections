@@ -1,7 +1,8 @@
 <?php
 
 function nypl_collections_menu() {
-  $items['admin/config/nypl-collections'] = array(
+
+  $items['admin/config/collections'] = array(
     'title' => 'NYPL Collections Administration',
     'description' => '.',
     'page callback' => 'drupal_get_form',
@@ -9,6 +10,23 @@ function nypl_collections_menu() {
     'access arguments' => array('administer nypl_collections'),
     'file' => 'nypl_collections.admin.inc',
   );
+
+  $items['admin/collection/add'] = array(
+    'title' => 'NYPL Collections Add.',
+    'description' => 'Curate a new Collection.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('nypl_collections_form'),
+    'access arguments' => array('administer nypl_collections'),
+    'file' => 'nypl_collections.admin.inc',
+  );
+
+  $items['collections/feed'] = array(
+    'title' => 'NYPL Curated Collections Feed',
+    'page callback' => 'nypl_collections_feed',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+
   return $items;
 }
 
