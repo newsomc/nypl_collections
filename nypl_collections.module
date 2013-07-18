@@ -32,4 +32,12 @@ function nypl_collections_menu() {
 
 function nypl_collections_form() {
 
+  $form['solr_search'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Query'),
+    '#description' => t('Full text search string'),
+    '#required' => TRUE,
+  );
+
+  return $form;
 }
