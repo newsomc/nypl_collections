@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/64/trunk/tests/Apache/Solr/HttpTransport
+END
+FileGetContentsTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/54/trunk/tests/Apache/Solr/HttpTransport/FileGetContentsTest.php
+END
+ResponseTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/54/trunk/tests/Apache/Solr/HttpTransport/ResponseTest.php
+END
+AbstractTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/64/trunk/tests/Apache/Solr/HttpTransport/AbstractTest.php
+END
+CurlTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/54/trunk/tests/Apache/Solr/HttpTransport/CurlTest.php
+END
+CurlNoReuseTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/54/trunk/tests/Apache/Solr/HttpTransport/CurlNoReuseTest.php
+END

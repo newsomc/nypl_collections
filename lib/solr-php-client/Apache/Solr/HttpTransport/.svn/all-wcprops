@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/66/trunk/Apache/Solr/HttpTransport
+END
+FileGetContents.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/66/trunk/Apache/Solr/HttpTransport/FileGetContents.php
+END
+Response.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/66/trunk/Apache/Solr/HttpTransport/Response.php
+END
+Interface.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/66/trunk/Apache/Solr/HttpTransport/Interface.php
+END
+Abstract.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/66/trunk/Apache/Solr/HttpTransport/Abstract.php
+END
+Curl.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/66/trunk/Apache/Solr/HttpTransport/Curl.php
+END
+CurlNoReuse.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/66/trunk/Apache/Solr/HttpTransport/CurlNoReuse.php
+END
