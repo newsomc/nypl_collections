@@ -5,7 +5,7 @@ require_once( '../lib/solr-php-client/Apache/Solr/Service.php' );
 // define('SOLR_PORT', variable_get('solr_host_port', '8080'));
 // define('SOLR_VERSION', variable_get('solr_host_version', 'solr-3.5'));
 
-define('SOLR_URI','http://solr.farm.nypl.org');
+define('SOLR_URI','solr.farm.nypl.org');
 define('SOLR_PORT','8080');
 define('SOLR_VERSION','solr-3.5');
 define('SOLR_USER','solradmin');
