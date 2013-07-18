@@ -1,10 +1,12 @@
 <?php
 
 function nypl_collections_admin_settings() {
+
   $form['collections_api_settings'] = array(
     '#type' => 'fieldset',
     '#title' => t('Collections API Settings'),
   );
+
   $form['collections_api_settings']['collections_api_key'] = array(
     '#type' => 'textfield',
     '#title' => t('NYPL Collections API Key'),
