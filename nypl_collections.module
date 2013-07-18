@@ -63,5 +63,10 @@ function nypl_collections_form() {
     '#required' => TRUE,
   );
 
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Go'),
+  );
+
   return $form;
 }
