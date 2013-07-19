@@ -92,8 +92,9 @@ function _nypl_collections_format_docs($docs_array) {
     if (isset ($doc->title_mtxt)) {
       foreach ($doc->title_mtxt as $title) {
         $t = $title[0];
+        var_dump($t);
       }
-      $rows = $t;
+      //$rows = $t;
     }
   }
 
