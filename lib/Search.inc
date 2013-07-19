@@ -12,6 +12,7 @@ define('SOLR_PASS','WbVL2ji5fNdstUrUHDdu');
 function SolrSearch($query) {
   $solr = new Apache_Solr_Service(SOLR_URI, SOLR_PORT, SOLR_VERSION);
   $solr->setAuthenticationCredentials(SOLR_USER, SOLR_PASS);
+  $limit = 100;
 
   if (!$solr->ping()) {
     print 'Solr service not responding.';
