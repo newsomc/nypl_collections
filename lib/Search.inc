@@ -53,6 +53,7 @@ function SolrSearchFacets($query) {
     $params = array(
       'facet' => 'true',
       'facet.field' =>  'topic_mtxt_s',
+      'facet.limit' => 30
     );
 
     $results = $solr->search($query, 0, $limit, $params);
