@@ -90,7 +90,7 @@ function _nypl_collections_format_docs($documents) {
 
   foreach($documents as $doc) {
     if (count(array_keys($doc->identifier_mtxt_s)) > 1) {
-      $identifiers = $doc->identifier_mtxt_s[0] . ', ' $doc->identifier_mtxt_s[1];
+      $identifiers = $doc->identifier_mtxt_s[0] . ', ' . $doc->identifier_mtxt_s[1];
     }
     else{
       $identifiers = $doc->identifier_mtxt_s[0];
