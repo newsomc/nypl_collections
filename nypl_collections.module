@@ -130,7 +130,12 @@ function _nypl_collections_build_facets($search, $field){
       $options = $docs->$field;
     }    
   }
-  return $options;
+  if ($options) {
+    return $options;    
+  }
+  else {
+    array('No facets for this filter.');
+  }
 }
 
 
