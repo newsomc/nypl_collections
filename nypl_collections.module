@@ -70,7 +70,7 @@ function nypl_collections_form($form, &$form_state) {
   $form['results'] = array(
     '#prefix' => '<div id="some-form-results-wrapper">',
     '#suffix' => '</div>',
-    '#weight' => 19,
+    '#weight' => 19, // Place at the bottom of the form.
   );
 
   if (isset($form_state['values']['solr_search_query'])) {
@@ -93,7 +93,6 @@ function nypl_collections_form($form, &$form_state) {
       '#type'  => 'fieldset',
       '#collapsible' => TRUE,
       '#collapsed' => TRUE,
-      '#weight' => 1,
     );
     
     $form['filter_search']['topics'] = array(
@@ -101,12 +100,11 @@ function nypl_collections_form($form, &$form_state) {
       '#type'  => 'fieldset',
       '#collapsible' => TRUE,
       '#collapsed' => TRUE,
-      '#weight' => 1,
     ); 
     
     $form['filter_search']['topics']['topic_mtxt_s'] = array(
       '#type' => 'checkboxes',
-      '#options' => array(0 => 'option one', 1 => 'option two'),//SolrSearch('*%3A*', 'facets'),
+      '#options' => _nypl_collections_build_facets($form_state['values']['solr_search_query']),
     );
     $search = SolrSearch($form_state['values']['solr_search_query']);
     $form['results']['#markup'] = _nypl_collections_format_docs($search->response->docs);
@@ -120,6 +118,13 @@ function nypl_collections_form($form, &$form_state) {
 function nypl_collections_form_ajax($form, &$form_state) {
   return $form['results'];
 }
+
+function _nypl_collections_build_facets($search){
+  $response = SolrSearchFacets($search);
+  var_dump($response);
+  die();
+}
+
 
 function _nypl_collections_format_docs($documents) {
 
