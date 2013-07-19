@@ -25,7 +25,7 @@ function SolrSearch($query) {
   }
 
   try {
-      $results = $solr->search($query, 0, $limit);
+    $results = $solr->search($query, 0, $limit);
   }
   catch (Exception $e) {
     die("<html><head><title>SEARCH EXCEPTION</title><body><pre>{$e->__toString()}</pre></body></html>");
@@ -35,6 +35,38 @@ function SolrSearch($query) {
 	return $results;
   }
 }
+
+function SolrSearchFacets($query) {
+  $solr = new Apache_Solr_Service(SOLR_URI, SOLR_PORT, SOLR_VERSION);
+  $solr->setAuthenticationCredentials(SOLR_USER, SOLR_PASS);
+  $limit = 500;
+  if (!$solr->ping()) {
+    print 'Solr service not responding.';
+    die();
+  }
+
+  if (get_magic_quotes_gpc() == 1) {
+    $query = stripslashes($query);
+  }
+
+  try {
+    $params = array(
+      'facet' => 'true',
+      'facet.field' =>  'topic_mtxt_s',
+    );
+
+    $results = $solr->search($query, 0, $limit, $params);
+  }
+  catch (Exception $e) {
+    die("<html><head><title>SEARCH EXCEPTION</title><body><pre>{$e->__toString()}</pre></body></html>");
+  }
+
+  if ($results) {
+	return $results;
+  }
+}
+
+
 
 
 ?>
