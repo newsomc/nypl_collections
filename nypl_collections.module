@@ -74,17 +74,11 @@ function nypl_collections_form($form, &$form_state) {
 
   if (isset($form_state['values']['solr_search_query'])) {
     $results = SolrSearch($form_state['values']['solr_search_query']);
-    $form['results']['#markup'] = print_r($results);
+    $form['results']['#markup'] = print_r($results->response);
   }
   else {
     $form['results']['#markup'] = 'No submission yet!';
   }
-
-/*  $form['submit'] = array(
-    '#type' => 'submit',
-    '#value' => t('Go'),
-    );*/
-
   return $form;
 }
 
