@@ -36,7 +36,7 @@ function SolrSearch($query) {
   }
 }
 
-function SolrSearchFacets($query) {
+function SolrSearchFacets($query, $facet) {
   $solr = new Apache_Solr_Service(SOLR_URI, SOLR_PORT, SOLR_VERSION);
   $solr->setAuthenticationCredentials(SOLR_USER, SOLR_PASS);
   $limit = 30;
@@ -52,7 +52,7 @@ function SolrSearchFacets($query) {
   try {
     $params = array(
       'facet' => 'true',
-      'facet.field' =>  'topic_mtxt_s',
+      'facet.field' =>  $facet,
       'facet.limit' => 30
     );
 
