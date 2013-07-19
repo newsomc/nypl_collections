@@ -103,7 +103,6 @@ function nypl_collections_form($form, &$form_state) {
         '#collapsed' => TRUE,
       ); 
 
-      var_dump($key);
       $form['filter_search'][strtolower($value)][$key] = array(
         '#type' => 'checkboxes',
         '#options' => _nypl_collections_build_facets($form_state['values']['solr_search_query'], $key),
@@ -125,7 +124,9 @@ function nypl_collections_form_ajax($form, &$form_state) {
 
 function _nypl_collections_build_facets($search, $field){
   $handle = SolrSearchFacets($search, $field);
+  var_dump($handle);
   foreach ($handle->response->docs as $docs) {
+    
     if ($docs->$field) {
       $options = $docs->$field;
     }    
