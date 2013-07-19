@@ -61,9 +61,8 @@ function nypl_collections_form($form, &$form_state) {
   $form['solr_search_query'] = array(
     '#title' => t('Query'),
     '#type' => 'textfield',
-    '#options' => drupal_map_assoc(array(1,2,3)),
     '#ajax' => array(
-      'wrapper' => 'nypl-collections-form-results-wrapper',
+      'wrapper'  => 'nypl-collections-form-results-wrapper',
       'callback' => 'nypl_collections_form_ajax'
     )
   );
