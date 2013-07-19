@@ -56,6 +56,8 @@ function SolrSearchFacets($query, $facet) {
       'facet' => 'true',
       'facet.field' =>  $facet,
       'facet.limit' => 30,
+      'defType' => 'dismax',
+      'qf' => $facet,
       'debugQuery' => 'true',
     );
     $results = $solr->search($query, 0, $limit, $params);
