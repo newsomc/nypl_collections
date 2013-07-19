@@ -93,6 +93,7 @@ function nypl_collections_form($form, &$form_state) {
       '#type'  => 'fieldset',
       '#collapsible' => TRUE,
       '#collapsed' => TRUE,
+      '#weight' => 1,
     );
     
     $form['filter_search']['topics'] = array(
@@ -100,6 +101,7 @@ function nypl_collections_form($form, &$form_state) {
       '#type'  => 'fieldset',
       '#collapsible' => TRUE,
       '#collapsed' => TRUE,
+      '#weight' => 1,
     ); 
     
     $form['filter_search']['topics']['topic_mtxt_s'] = array(
