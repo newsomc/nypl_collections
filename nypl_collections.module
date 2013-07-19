@@ -67,10 +67,6 @@ function nypl_collections_form($form, &$form_state) {
     )
   );
 
-  $form['results'] = array(
-    '#prefix' => '<div id="some-form-results-wrapper">',
-    '#suffix' => '</div>'
-  );
 
   if (isset($form_state['values']['solr_search_query'])) {
     $facets = array(
@@ -111,6 +107,12 @@ function nypl_collections_form($form, &$form_state) {
   else {
     $form['results']['#markup'] = 'Begin your search.';
   }
+
+  $form['results'] = array(
+    '#prefix' => '<div id="some-form-results-wrapper">',
+    '#suffix' => '</div>'
+  );
+
   return $form;
 }
 
