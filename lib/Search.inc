@@ -41,6 +41,9 @@ function SolrSearch($query, $type, $facets = NULL) {
       try {
         $results = $solr->search($query, 0, $limit);
       }
+      catch (Exception $e) {
+        die("<html><head><title>SEARCH EXCEPTION</title><body><pre>{$e->__toString()}</pre></body></html>");
+      }
       break;
       return $results;
   }
