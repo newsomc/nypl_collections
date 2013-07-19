@@ -73,7 +73,38 @@ function nypl_collections_form($form, &$form_state) {
   );
 
   if (isset($form_state['values']['solr_search_query'])) {
-    $search = SolrSearch($form_state['values']['solr_search_query']);
+
+    $search = SolrSearch($form_state['values']['solr_search_query'], 'init');
+
+    $facets = array(
+	    "topic_mtxt_s" => "Topics",
+	    "namePart_mtxt_s" => "Names",
+	    "rootCollection_rootCollectionUUID_s" => "Collections",
+	    "geographic_mtxt_s" => "Places",
+	    "genre_mtxt_s" => "Genres",
+	    "form_mtxt_s" => "Forms",
+	    "publisher_mtxt_s" => "Publishers",
+	    "physicalLocation_mtxt_s" => "Library locations",
+	    "typeOfResource_mtxt_s" => "Resource types",
+	    "language_mtxt_s" => "Languages",
+	    "title_uuid_s" => "Parent title"
+    );
+
+    $form['filter_search'] = array(
+      '#type' => 'fieldset',
+      '#collapsed' => TRUE,
+    );
+    
+    $form['filter_search']['topics'] = array(
+      '#type' => 'fieldset',
+      '#collapsed' => TRUE,
+    ); 
+    
+    $form['filter_search']['topics']['topic_mtxt_s'] = array(
+      '#type' => 'checkboxes',
+      '#options' => array(0 => 'option one', 1 => 'option two'),//SolrSearch('*%3A*', 'facets'),
+    );
+
     $form['results']['#markup'] = _nypl_collections_format_docs($search->response->docs);
   }
   else {
