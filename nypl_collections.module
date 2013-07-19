@@ -74,15 +74,24 @@ function nypl_collections_form($form, &$form_state) {
 
   if (isset($form_state['values']['solr_search_query'])) {
     $search = SolrSearch($form_state['values']['solr_search_query']);
-    $php_results = json_decode($search->response);
-    $form['results']['#markup'] = print_r($php_results->responsex);
+    //$php_results = json_decode($search->response);
+    _nypl_collections_format_docs($search->response->docs);
+
+    $form['results']['#markup'] = var_dump($search->response->docs);
   }
   else {
-    $form['results']['#markup'] = 'No submission yet!';
+    $form['results']['#markup'] = 'Begin your search.';
   }
   return $form;
 }
 
 function nypl_collections_form_ajax($form, &$form_state) {
   return $form['results'];
+}
+
+function _nypl_collections_format_docs($docs_array){
+  foreach(){
+
+  }
+
 }
