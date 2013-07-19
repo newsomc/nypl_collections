@@ -86,15 +86,10 @@ function nypl_collections_form_ajax($form, &$form_state) {
   return $form['results'];
 }
 
-function _nypl_collections_format_docs($docs_array) {
+function _nypl_collections_format_docs($documents) {
 
-  foreach($docs_array as $doc) {
-    var_dump($doc->title_mtxt);
-/*    foreach($doc->title_mtxt as $d) {
-
-      }*/
-    //var_dump($doc->title_mtxt);
-    //$rows = $t;
+  foreach($documents as $doc) {
+    $rows[] = $doc[0];
   }
 
   $header = array('Title');
