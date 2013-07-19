@@ -69,8 +69,8 @@ function nypl_collections_form($form, &$form_state) {
 
   $form['results'] = array(
     '#prefix' => '<div id="some-form-results-wrapper">',
-    '#suffix' => '</div>'
-    '#weight' => -10,
+    '#suffix' => '</div>',
+    '#weight' => -20,
   );
 
   if (isset($form_state['values']['solr_search_query'])) {
