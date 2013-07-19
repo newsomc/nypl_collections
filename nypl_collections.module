@@ -75,7 +75,7 @@ function nypl_collections_form($form, &$form_state) {
   if (isset($form_state['values']['solr_search_query'])) {
     $search = SolrSearch($form_state['values']['solr_search_query']);
     $php_results = json_decode($search->response);
-    $form['results']['#markup'] = print_r($php_results);
+    $form['results']['#markup'] = print_r($php_results->responsex);
   }
   else {
     $form['results']['#markup'] = 'No submission yet!';
