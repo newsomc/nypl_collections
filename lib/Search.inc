@@ -1,5 +1,5 @@
 <?php
-include('../lib/solr-php-client/Apache/Solr/Service.php');
+require_once('solr-php-client/Apache/Solr/Service.php');
 
 define('SOLR_URI','solr.farm.nypl.org');
 define('SOLR_PORT','8080');
@@ -30,7 +30,7 @@ function SolrSearch($query) {
   }
 
   if ($results) {
-    print_r($results);
+	return $results;
   }
 }
 
