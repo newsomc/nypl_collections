@@ -91,12 +91,14 @@ function nypl_collections_form($form, &$form_state) {
     );
 
     $form['filter_search'] = array(
-      '#type' => 'fieldset',
+      '#title' => t('Filter'),
+      '#type'  => 'fieldset',
       '#collapsed' => TRUE,
     );
     
     $form['filter_search']['topics'] = array(
-      '#type' => 'fieldset',
+      '#title' => t('Topics'),
+      '#type'  => 'fieldset',
       '#collapsed' => TRUE,
     ); 
     
