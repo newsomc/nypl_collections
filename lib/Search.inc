@@ -53,7 +53,7 @@ function SolrSearchFacets($query, $facet) {
     $params = array(
       'start' => 0,
       'rows' => 0,
-      'facet' => TRUE,
+      'facet' => 'true',
       'facet.field' =>  $facet,
       'facet.limit' => 30
     );
