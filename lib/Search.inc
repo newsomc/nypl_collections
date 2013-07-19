@@ -12,7 +12,7 @@ define('SOLR_PASS','WbVL2ji5fNdstUrUHDdu');
 function SolrSearch($query) {
   $solr = new Apache_Solr_Service(SOLR_URI, SOLR_PORT, SOLR_VERSION);
   $solr->setAuthenticationCredentials(SOLR_USER, SOLR_PASS);
-  $limit = 500;
+  $limit = 300;
 
   if (!$solr->ping()) {
     print 'Solr service not responding.';
@@ -24,7 +24,7 @@ function SolrSearch($query) {
   }
 
   try {
-      $results = $solr->search($query, 0, $limit);
+      $results = $solr->search($query . '&facet=true&facet.field=identifier_mtxt_s', 0, $limit);
   }
   catch (Exception $e) {
     die("<html><head><title>SEARCH EXCEPTION</title><body><pre>{$e->__toString()}</pre></body></html>");
