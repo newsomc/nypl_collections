@@ -55,12 +55,12 @@ function SolrSearchFacets($query, $facet) {
       'rows' => 0,
       'facet' => 'true',
       'facet.field' =>  $facet,
-      'facet.limit' => 30,
-      'defType' => 'dismax',
-      'qf' => $facet,
-      'debugQuery' => 'true',
+      'facet.limit' => 30//,
+      //'defType' => 'dismax',
+      //'qf' => $facet,
+      //'debugQuery' => 'true',
     );
-    $results = $solr->search($query, 0, $limit, $params);
+    $results = $solr->search($query, 0, 0, $params);
   }
   catch (Exception $e) {
     die("<html><head><title>SEARCH EXCEPTION</title><body><pre>{$e->__toString()}</pre></body></html>");
