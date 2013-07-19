@@ -1,5 +1,5 @@
 <?php
-require_once(drupal_load('module', 'lib/solr-php-client/Apache/Search.inc'));
+require_once(drupal_load('module', 'lib/solr-php-client/Apache/Solr/Service.php'));
 
 define('SOLR_URI','solr.farm.nypl.org');
 define('SOLR_PORT','8080');
@@ -7,7 +7,7 @@ define('SOLR_VERSION','/solr-3.5/repoapi');
 define('SOLR_USER','solradmin');
 define('SOLR_PASS','WbVL2ji5fNdstUrUHDdu');
 
-// http://solr.farm.nypl.org:8080/solr-3.5/repoapi/select/?q=*%3A*&start=0&rows=0&facet=true&facet.field=topic_mtxt_s&facet.limit=1200
+// Example: http://solr.farm.nypl.org:8080/solr-3.5/repoapi/select/?q=*%3A*&start=0&rows=0&facet=true&facet.field=topic_mtxt_s&facet.limit=1200
 
 function SolrSearch($query) {
   $solr = new Apache_Solr_Service(SOLR_URI, SOLR_PORT, SOLR_VERSION);
@@ -33,4 +33,6 @@ function SolrSearch($query) {
     print_r($results);
   }
 }
+
+?>
 
