@@ -54,14 +54,31 @@ function nypl_collections_menu() {
  *
  */
 
-function nypl_collections_form() {
+function nypl_collections_form($form, &$form_state) {
 
-  $form['solr_search'] = array(
-    '#type' => 'textfield',
+  require_once('includes/Search.inc');
+
+  $form['solr_search_query'] = array(
     '#title' => t('Query'),
-    '#description' => t('Full text search string'),
-    '#required' => TRUE,
+    '#type' => 'textfield',
+    '#options' => drupal_map_assoc(array(1,2,3)),
+    '#ajax' => array(
+      'wrapper' => 'nypl-collections-form-results-wrapper',
+      'callback' => 'nypl_collections_form_ajax'
+    )
   );
+
+  $form['results'] = array(
+    '#prefix' => '<div id="some-form-results-wrapper">',
+    '#suffix' => '</div>'
+  );
+
+  if (isset($form_state['values']['select'])) {
+    $form['results']['#markup'] = SolrSearch($form_state['values']['solr_search_query']);
+  }
+  else {
+    $form['results']['#markup'] = 'No submission yet!';
+  }
 
   $form['submit'] = array(
     '#type' => 'submit',
@@ -69,4 +86,8 @@ function nypl_collections_form() {
   );
 
   return $form;
+}
+
+function nypl_collections_form_ajax($form, &$form_state) {
+  return $form['results'];
 }
