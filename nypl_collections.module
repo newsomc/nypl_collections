@@ -124,7 +124,7 @@ function nypl_collections_form_ajax($form, &$form_state) {
 
 function _nypl_collections_build_facets($search, $field){
   $handle = SolrSearchFacets($search, $field);
-  foreach ($handle->response->facet_counts->facet_fields as $facet) {
+  foreach ($handle->response->facet_counts as $facet) {
     var_dump($facet);
   }    
 
