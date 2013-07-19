@@ -1,5 +1,5 @@
 <?php
-require_once('../lib/solr-php-client/Apache/Solr/Service.php');
+include('../lib/solr-php-client/Apache/Solr/Service.php');
 
 define('SOLR_URI','solr.farm.nypl.org');
 define('SOLR_PORT','8080');
