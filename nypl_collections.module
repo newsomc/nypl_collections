@@ -73,9 +73,6 @@ function nypl_collections_form($form, &$form_state) {
   );
 
   if (isset($form_state['values']['solr_search_query'])) {
-
-    $search = SolrSearch($form_state['values']['solr_search_query'], 'init');
-
     $facets = array(
 	    "topic_mtxt_s" => "Topics",
 	    "namePart_mtxt_s" => "Names",
@@ -108,7 +105,7 @@ function nypl_collections_form($form, &$form_state) {
       '#type' => 'checkboxes',
       '#options' => array(0 => 'option one', 1 => 'option two'),//SolrSearch('*%3A*', 'facets'),
     );
-
+    $search = SolrSearch($form_state['values']['solr_search_query'], "init");
     $form['results']['#markup'] = _nypl_collections_format_docs($search->response->docs);
   }
   else {
