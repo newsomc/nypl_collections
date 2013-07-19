@@ -121,8 +121,10 @@ function nypl_collections_form_ajax($form, &$form_state) {
 
 function _nypl_collections_build_facets($search){
   $handle = SolrSearchFacets($search);
-  var_dump($handle->response->docs);
-  die();
+  foreach ($handle->response->docs as $docs) {
+    $options[] = $docs->topic_mtxt_s;
+  }
+  return $options;
 }
 
 
