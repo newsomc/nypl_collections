@@ -90,7 +90,7 @@ function _nypl_collections_format_docs($docs_array) {
 
   foreach($docs_array as $doc) {
     foreach($doc->title_mtxt as $d) {
-      var_dump($d);
+      var_dump($d[0]);
     }
     //var_dump($doc->title_mtxt);
     //$rows = $t;
