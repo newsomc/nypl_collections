@@ -92,6 +92,6 @@ function _nypl_collections_format_docs($documents) {
     $rows[] = array($doc->commercial_code, $doc->title_mtxt);
   }
 
-  $header = array('Title');
+  $header = array('Commercial Code', 'Title');
   return theme('table', array('header' => $header, 'rows' => $rows));
 }
