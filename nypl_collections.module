@@ -56,7 +56,7 @@ function nypl_collections_menu() {
 
 function nypl_collections_form($form, &$form_state) {
 
-  require_once('includes/Search.inc');
+  require_once('lib/Search.inc');
 
   $form['solr_search_query'] = array(
     '#title' => t('Query'),
