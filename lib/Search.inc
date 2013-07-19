@@ -31,7 +31,6 @@ function SolrSearch($query, $type) {
           'facet' => 'true',
           'facet.field' => 'identifier_mtxt_s',
         );
-
         $results = $solr->search($query, 0, $limit, $params);
       }
       catch (Exception $e) {
