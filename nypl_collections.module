@@ -73,7 +73,7 @@ function nypl_collections_form($form, &$form_state) {
     '#suffix' => '</div>'
   );
 
-  if (isset($form_state['values']['select'])) {
+  if (isset($form_state['values']['solr_search_query'])) {
     $form['results']['#markup'] = SolrSearch($form_state['values']['solr_search_query']);
   }
   else {
