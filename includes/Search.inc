@@ -1,5 +1,5 @@
 <?php
-require_once(drupal_load('module', 'lib/solr-php-client/Apache/Solr/Service.php'));
+require_once(drupal_load('module', '/lib/solr-php-client/Apache/Solr/Service.php'));
 
 define('SOLR_URI','solr.farm.nypl.org');
 define('SOLR_PORT','8080');
