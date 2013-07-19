@@ -89,7 +89,7 @@ function nypl_collections_form_ajax($form, &$form_state) {
 function _nypl_collections_format_docs($documents) {
 
   foreach($documents as $doc) {
-    $rows[] = array($doc->commercial_code, $doc->title_mtxt_s[0], $doc->physicalLocation_mtxt[1]);
+    $rows[] = array($doc->commercialCode, $doc->title_mtxt_s[0], $doc->physicalLocation_mtxt[1]);
   }
 
   $header = array('Commercial Code', 'Title', 'Location');
