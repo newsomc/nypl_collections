@@ -60,6 +60,8 @@ function SolrSearchFacets($query, $facet) {
     );
 
     $results = $solr->search($query, 0, $limit, $params);
+
+    var_dump($query);
   }
   catch (Exception $e) {
     die("<html><head><title>SEARCH EXCEPTION</title><body><pre>{$e->__toString()}</pre></body></html>");
