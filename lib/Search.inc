@@ -50,6 +50,7 @@ function SolrSearchFacets($query, $facet) {
   }
 
   try {
+    var_dump($facet);
     $params = array(
       'start' => 0,
       'rows' => 0,
