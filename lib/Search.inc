@@ -55,7 +55,8 @@ function SolrSearchFacets($query, $facet) {
       'rows' => 0,
       'facet' => 'true',
       'facet.field' =>  $facet,
-      'facet.limit' => 30
+      'facet.limit' => 30,
+      'debugQuery' => 'true',
     );
     $results = $solr->search($query, 0, $limit, $params);
   }
@@ -67,9 +68,6 @@ function SolrSearchFacets($query, $facet) {
     return $results;
   }
 }
-
-
-
 
 ?>
 
