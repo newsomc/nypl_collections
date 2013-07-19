@@ -39,7 +39,7 @@ function SolrSearch($query) {
 function SolrSearchFacets($query) {
   $solr = new Apache_Solr_Service(SOLR_URI, SOLR_PORT, SOLR_VERSION);
   $solr->setAuthenticationCredentials(SOLR_USER, SOLR_PASS);
-  $limit = 500;
+  $limit = 30;
   if (!$solr->ping()) {
     print 'Solr service not responding.';
     die();
