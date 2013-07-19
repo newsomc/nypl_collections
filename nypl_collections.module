@@ -124,6 +124,7 @@ function _nypl_collections_build_facets($search){
   foreach ($handle->response->docs as $docs) {
     $options[] = array($docs->topic_mtxt_s);
   }
+  var_dump($options);
   return $options;
 }
 
