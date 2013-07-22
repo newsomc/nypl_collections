@@ -127,17 +127,10 @@ function _nypl_collections_build_facets($search, $field){
   foreach($handle->facet_counts->facet_fields->$field as $key => $value) {
     $options[] = $key;
   }
-  return $options;
-  //return array_keys($handle->facet_counts->facet_fields->$field);
-//$options;
-/*  if ($options) {
-    return $options;    
+  if ($options) {
+    return $options;
   }
-  else {
-    array('No facets for this filter.');
-    }*/
 }
-
 
 function _nypl_collections_format_docs($documents) {
 
